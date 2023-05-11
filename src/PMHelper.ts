@@ -1,5 +1,5 @@
 import { ExecSyncOptionsWithStringEncoding, execSync } from "child_process";
-import { PathHelper } from "./PathHelper";
+import PathHelper from "./PathHelper";
 
 /** Known Package Managers */
 export enum PackageManager {
