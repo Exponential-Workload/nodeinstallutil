@@ -1,0 +1,28 @@
+{
+  "name": "@rco3/nodeinstallutil",
+  "version": "1.0.0",
+  "description": "Utilities for installing NodeJS, messing with the PATH and running package manager things",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "dev": "ts-node src/index.ts"
+  },
+  "keywords": [
+    "tty",
+    "ansi",
+    "util"
+  ],
+  "author": "Exponential-Workload",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.1",
+    "@types/node": "^20.1.2",
+    "ts-node": "^10.9.1"
+  },
+  "dependencies": {
+    "fs-extra": "^11.1.1",
+    "typescript": "^5.0.4"
+  }
+}
