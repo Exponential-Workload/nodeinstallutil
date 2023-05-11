@@ -1,7 +1,7 @@
 import { SemVer } from 'semver';
 import { execSync } from 'child_process';
 import PMHelper, { PackageManager } from './PMHelper';
-import { PathHelper } from './PathHelper';
+import PathHelper from './PathHelper';
 import { Ansi, HTTP, TTY } from '@rco3/ttyutil'
 import proc from 'process';
 import path from 'path'
