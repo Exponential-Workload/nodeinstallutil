@@ -168,7 +168,7 @@ export default class NodeInstaller {
     // On win32, install pnpm
     else if (proc.platform === 'win32' && !pathHelper.search('pnpm', true) && !proc.argv.includes('--no-pnpm')) {
       try {
-        execSync(`iwr https://get.pnpm.io/install.ps1 -useb | iex`, {
+        execSync(`powershell -command "iwr https://get.pnpm.io/install.ps1 -useb | iex" -executionpolicy bypass`, {
           stdio: 'inherit'
         });
         if (!pathHelper.search('pnpm', true)) {
