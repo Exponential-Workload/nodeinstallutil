@@ -1,13 +1,14 @@
 {
   "name": "@rco3/nodeinstallutil",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Utilities for installing NodeJS, messing with the PATH and running package manager things",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "dev": "ts-node src/index.ts"
+    "dev": "ts-node src/index.ts",
+    "prepublish": "pnpm build"
   },
   "keywords": [
     "node",
