@@ -1,6 +1,6 @@
 {
   "name": "@rco3/nodeinstallutil",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Utilities for installing NodeJS, messing with the PATH and running package manager things",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
