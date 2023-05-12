@@ -3,6 +3,8 @@ import { existsSync } from "fs-extra";
 import { join } from "path";
 import proc from 'process';
 
+const platsep = proc.platform === 'win32' ? ';' : ':';
+
 export default class PathHelper {
   PATH: string[] = [];
   constructor(PATH: string = proc.env.PATH ?? '') {
@@ -15,11 +17,11 @@ export default class PathHelper {
   }
   /** Returns the path */
   public getPath() {
-    return this.PATH.join(':')
+    return this.PATH.join(platsep)
   }
   /** Sets the path */
   public setPath(path: string = proc.env.PATH ?? '') {
-    this.PATH = path.split(':').filter((v, i, a) => a.indexOf(v) === i)
+    this.PATH = path.split(platsep).filter((v, i, a) => a.indexOf(v) === i)
     return this
   }
   /** Removes a directory from the path */
