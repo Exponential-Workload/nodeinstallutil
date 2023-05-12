@@ -36,7 +36,7 @@ export default class NodeInstaller {
   static getSystemVer(): false | SemVer | undefined {
     let v: string | false | undefined = undefined
     try {
-      v = this.#sysNodeVer ?? execSync('node -v').toString('utf-8').replace('v', '');
+      v = this.#sysNodeVer ?? execSync('node --version', {}).toString('utf-8').replace('v', '');
     } catch (error) {
       return undefined;
     }
