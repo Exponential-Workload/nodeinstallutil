@@ -9,14 +9,14 @@ import { chmodSync, createLinkSync, ensureDirSync, ensureFileSync, exists, exist
 import _7z from '7zip-min';
 
 /** Version Check Values */
-export const enum VersionCheck {
+export enum VersionCheck {
   UpToDate,
   Outdated,
   NotInstalled,
 }
 
 /** Installation Status */
-export const enum InstallStatus {
+export enum InstallStatus {
   Installed,
   NotInstalled,
   RestartSystemOrProcess,
