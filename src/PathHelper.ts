@@ -47,7 +47,7 @@ export default class PathHelper {
     if (!exact && caseInsensitive)
       path = path.toLowerCase()
     let x: string | false = false;
-    const pathHasItem = !!this.searchPath((i) => {
+    let pathHasItem = !!this.searchPath((i) => {
       readdirSync(i).forEach(f => {
         if (caseInsensitive ? f.toLowerCase() === path : f === path)
           if (existsSync(join(i, f)))
@@ -55,7 +55,19 @@ export default class PathHelper {
       })
       return !!x
     })
-
-    return (pathHasItem && x) ? x : undefined
+    if (pathHasItem && x) return x
+    x = false;
+    pathHasItem = !!this.searchPath((i) => {
+      readdirSync(i).forEach(f => {
+        const f2 = f.split('.')
+        if (f2.length > 1) f2.pop()
+        f = f2.join('.')
+        if (caseInsensitive ? f.toLowerCase() === path : f === path)
+          if (existsSync(join(i, f)))
+            x = join(i, f)
+      })
+      return !!x
+    })
+    if (pathHasItem && x) return x
   }
 }
