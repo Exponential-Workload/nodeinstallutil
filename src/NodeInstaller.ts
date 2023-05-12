@@ -35,8 +35,10 @@ export default class NodeInstaller {
   /** Returns the system nodejs version */
   static getSystemVer(): false | SemVer | undefined {
     let v: string | false | undefined = undefined
+    const ph = new PathHelper;
+    const search = (exe:string)=>ph.search(exe,proc.platform==='win32')
     try {
-      v = this.#sysNodeVer ?? execSync(`"${(new PathHelper).search('node', proc.platform === 'win32')}" --version`, {}).toString('utf-8').replace('v', '');
+      v = this.#sysNodeVer ?? execSync(`"${search('node')??search('node.exe')??search('node.cmd')??search('node.ps1')}" --version`, {}).toString('utf-8').replace('v', '');
     } catch (error) {
       return undefined;
     }
