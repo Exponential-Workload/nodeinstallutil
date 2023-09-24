@@ -1,5 +1,5 @@
 {
-  "name": "@rco3/nodeinstallutil",
+  "name": "@shxtpost/nodeinstallutil",
   "version": "1.0.10",
   "description": "Utilities for installing NodeJS, messing with the PATH and running package manager things",
   "main": "dist/index.js",
@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "7zip-min": "^1.4.4",
-    "@rco3/ttyutil": "^1.0.2",
+    "@shxtpost/ttyutil": "^1.0.2",
     "fs-extra": "^11.1.1",
     "semver": "^7.5.0",
     "typescript": "^5.0.4"

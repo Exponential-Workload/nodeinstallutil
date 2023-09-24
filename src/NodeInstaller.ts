@@ -2,7 +2,7 @@ import { SemVer } from 'semver';
 import { execSync } from 'child_process';
 import PMHelper, { PackageManager } from './PMHelper';
 import PathHelper from './PathHelper';
-import { Ansi, HTTP, TTY } from '@rco3/ttyutil'
+import { Ansi, HTTP, TTY } from '@shxtpost/ttyutil'
 import proc from 'process';
 import path from 'path'
 import { chmodSync, createLinkSync, ensureDirSync, ensureFileSync, exists, existsSync, linkSync, moveSync, readdirSync, readlinkSync, renameSync, rmSync } from 'fs-extra';
@@ -36,9 +36,9 @@ export default class NodeInstaller {
   static getSystemVer(): false | SemVer | undefined {
     let v: string | false | undefined = undefined
     const ph = new PathHelper;
-    const search = (exe:string)=>ph.search(exe,proc.platform==='win32')
+    const search = (exe: string) => ph.search(exe, proc.platform === 'win32')
     try {
-      v = this.#sysNodeVer ?? execSync(`"${search('node')??search('node.exe')??search('node.cmd')??search('node.ps1')}" --version`, {}).toString('utf-8').replace('v', '');
+      v = this.#sysNodeVer ?? execSync(`"${search('node') ?? search('node.exe') ?? search('node.cmd') ?? search('node.ps1')}" --version`, {}).toString('utf-8').replace('v', '');
     } catch (error) {
       return undefined;
     }

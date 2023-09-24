@@ -3,4 +3,4 @@
 Utilities for installing NodeJS, messing with the PATH and running package
 manager things
 
-[npm](https://npm.im/@rco3/nodeinstallutil)
+[npm](https://npm.im/@shxtpost/nodeinstallutil)
